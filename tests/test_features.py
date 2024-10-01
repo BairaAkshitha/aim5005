@@ -86,7 +86,7 @@ class TestLabelEncoder:
         labels = ['soccer', 'basketball', 'tennis']
         encoder.fit(labels)
         data = ['basketball', 'soccer', 'tennis']
-        expected = [0, 1, 2]  # Based on the sorted mapping
+        expected = [0, 1, 2] 
         result = encoder.transform(data)
         assert (np.array(result) == np.array(expected)).all(), (
             f"Expected transformed values {expected}, got {result}"
@@ -95,7 +95,7 @@ class TestLabelEncoder:
     def test_label_encoder_fit_transform(self):
         encoder = LabelEncoder()
         labels = ['soccer', 'basketball', 'tennis']
-        expected = [1, 0, 2]  # Based on the sorted order
+        expected = [1, 0, 2]  
         result = encoder.fit_transform(labels)
         assert (np.array(result) == np.array(expected)).all(), (
             f"Expected transformed values {expected}, got {result}"
@@ -108,7 +108,7 @@ class TestLabelEncoder:
 
         # Transforming a single value
         single_value = ['soccer']
-        expected = [1]  # Based on the sorted mapping
+        expected = [1] 
         result = encoder.transform(single_value)
 
         assert (np.array(result) == np.array(expected)).all(), (
